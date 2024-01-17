@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Excel Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        #loading {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>PDF to Excel Converter</h2>
+    <input type="file" id="pdfFile" accept=".pdf">
+    <br>
+    <button onclick="convertToExcel()">Convert to Excel</button>
+    <div id="loading">Loading...</div>
+
+    <script>
+        function convertToExcel() {
+            var pdfFileInput = document.getElementById('pdfFile');
+            var pdfFile = pdfFileInput.files[0];
+
+            if (!pdfFile) {
+                alert("Please select a PDF file.");
+                return;
+            }
+
+            // Loading göstergesini görünür yap
+            var loadingElement = document.getElementById('loading');
+            loadingElement.style.display = 'block';
+
+            // Bu noktada PDF dosyasını işleyecek ve Excel'e dönüştürecek bir JavaScript kütüphanesi kullanmanız gerekecektir.
+            
+            
+            // Dönüştürme tamamlandığında loading göstergesini gizle
+            loadingElement.style.display = 'none';
+
+            // Bu örnekte, kullanıcıyı bir indirme bağlantısına yönlendiriyoruz
+            var downloadLink = document.createElement('a');
+            downloadLink.href = '#'; // Bu kısım gerçek indirme bağlantısına yönlendirilecek dosyanın URL'si olmalıdır.
+            downloadLink.download = 'output.xlsx'; // İndirilen dosyanın adı
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+    </script> <script src="main.js"></script>
+</body>
+</html>

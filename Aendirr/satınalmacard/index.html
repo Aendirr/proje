@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Dönüşümlü Kart Animasyonu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/ede4348c88.js" crossorigin="anonymous"></script><link rel="stylesheet" href="./style.css">
+  <!-- CSS -->
+  <style>
+    /* ... (Diğer stiller) ... */
+
+    body {
+      background-color: #23272A;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    header {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 115px;
+      z-index: 10;
+      background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/menutexture.png);
+      background-position: center top;
+      background-size: auto 200px;
+      background-repeat: repeat-x;
+    }
+
+    header .inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      height: 70px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    header .logo {
+      display: block;
+      width: 76px;
+      height: 90px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: white;
+      text-align: center;
+    }
+
+    header .logo img {
+      width: 45px;
+      margin-top: 10px;
+    }
+
+    header nav {
+      display: none;
+    }
+
+    header nav a {
+      font-family: 'Arial', serif;
+      font-size: 12px;
+      color: #8c8c8e;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-decoration: none;
+      margin: 0 18px;
+    }
+
+    header nav a.active,
+    header nav a:hover {
+      color: white;
+    }
+
+    header .burger {
+      display: block;
+      position: relative;
+      top: -6px;
+      padding-left: 30px;
+    }
+
+    header .burger:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 2px;
+      background: white;
+      box-shadow: 0 12px 0 0 white, 0 6px 0 0 white;
+    }
+
+    header .giris-link {
+      width: 72px;
+      text-align: center;
+      position: absolute;
+      right: 10px;
+      top: 27px;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-decoration: none;
+      padding-bottom: 6px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @media screen and (min-width: 800px) {
+      header nav {
+        display: block;
+      }
+
+      header .burger {
+        display: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="loading">
+
+    <!-- Header Section -->
+    <header>
+      <div class="inner">
+        <!--<div class="logo"><img src=""></div>-->
+        <div class="burger"></div>
+        <nav>
+          <a href="http://127.0.0.1:5500/proje.html">Ana Sayfa</a>
+          <a href="http://127.0.0.1:5500/proje-hakkimizda.html">Hakkımızda</a>
+          <a class="active"href="http://127.0.0.1:5500/proje5 ">Çalışmalarımız</a>
+          <a href="#">Göz Atın</a>
+        </nav>
+        <a href="http://127.0.0.1:5500/loginpage.html" class="giris-link">Giriş Yapın</a>
+      </div>
+    </header>
+<div class="container">
+  <h1>Plan Seçiniz</h1>
+  <div class="card-container">
+    <div class="card-wrapper">
+      <div class="card light">
+        <div class="text-overlay">
+          <h2>Bireysel</h2>
+          <div class="price">₺2500 <small>/ yıllık</small></div>
+          <div class="details-text">
+              <span>1 katkıda bulunan</span>
+              <span>En fazla 10 proje</span>
+              <span>7/24 destek</span>
+          </div>
+        </div>
+        <div class="purchase-button-container">
+          <h2 class="back-h2">Bireysel</h2>
+          <i class="fa-solid fa-person"></i>
+          <div class="purchase-button light">Satın Al</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-wrapper">
+      <div class="card dark">
+        <div class="text-overlay">
+          <h2>Takım</h2>
+          <div class="price">₺3500 <small>/ yıllık</small></div>
+          <div class="details-text">
+            <span>10 katkıda bulunan</span>
+            <span>En fazla 10 proje</span>
+            <span>7/24 Destek</span>
+          </div>
+        </div>
+        <div class="purchase-button-container">
+          <h2 class="back-h2">Takım</h2>
+          <i class="fa-solid fa-people-group"></i>
+          <div class="purchase-button dark">Satın Al</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-wrapper">
+      <div class="card light">
+        <div class="text-overlay">
+          <h2>Organizasyon</h2>
+          <div class="price">₺5000 <small>/ yıllık</small></div>
+          <div class="details-text">
+            <span>100 Katkıda Bulunan</span>
+            <span>En fazla 200 proje</span>
+            <span>7/24 Destek</span>
+            <span>Beta Erişim Kartı</span>
+          </div>
+        </div>
+        <div class="purchase-button-container">
+          <h2 class="back-h2">Organizasyon</h2>
+          <i class="fa-solid fa-building"></i>
+          <div class="purchase-button light">Satın Al</div>
+        </div>
+        <!--<script>
+            function addToCart() {
+              alert("Ürün sepete eklendi!"); // Basit bir uyarı, gerçek bir sepet sistemi eklemek için daha fazla işleme ihtiyaç vardır.
+            }
+          </script>-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+  <script src="https://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+  <!-- Link to your JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
